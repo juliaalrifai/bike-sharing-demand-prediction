@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project uses machine learning to predict hourly bike-sharing demand using historical rental, weather, and time-based data. The objective was to build and evaluate a predictive model while identifying the factors that most influence demand.
+This project uses machine learning to predict hourly bike-sharing demand using historical rental, weather, and time-based data. The objective was to build and evaluate a predictive model while identifying the factors that most influence demand, with the goal of generating insights that could support bike availability and operational planning.
 
 The analysis follows an end-to-end machine learning workflow, from exploratory data analysis and feature engineering to model development, validation, hyperparameter tuning, and final evaluation.
 
@@ -50,11 +50,11 @@ I first trained a **Linear Regression** model to establish a baseline.
 
 I then developed a **Random Forest Regressor** to capture nonlinear relationships between bike demand and factors such as weather, temperature, working days, and time of day.
 
-Because the observations occur over time, I used **time-series cross-validation** rather than randomly shuffling observations during validation.
+The data was split chronologically into training and test sets. Because the observations occur over time, I also used **time-series cross-validation** rather than randomly shuffling observations during validation.
 
 ### 4. Model Optimization
 
-I evaluated the Random Forest using:
+I evaluated and refined the Random Forest using:
 
 - Time-series cross-validation
 - Grid Search
@@ -69,11 +69,11 @@ The tuning process showed that the original Random Forest configuration performe
 | Model | Test RMSE | Test MAE | Test R² |
 |---|---:|---:|---:|
 | Linear Regression | 131.27 | 98.38 | 0.636 |
-| Random Forest | 94.44 | 58.45 | 0.812 |
+| Random Forest | 94.44 | 62.75 | 0.812 |
 
 The Random Forest substantially outperformed the Linear Regression baseline, reducing prediction error and explaining approximately **81% of the variation in bike-sharing demand** on the test data.
 
-The final Random Forest achieved a **test RMSE of 94.44**, which was close to its time-series cross-validation RMSE of **93.22**, suggesting that the validation process provided a reasonable estimate of performance on unseen data.
+The final Random Forest achieved a **test RMSE of 94.44**, which was close to its **mean time-series cross-validation RMSE of 93.22**, suggesting that the validation process provided a reasonable estimate of performance on unseen data.
 
 ## Key Insights
 
@@ -91,7 +91,7 @@ These results suggest that demand is strongly influenced by both **weather condi
 
 Accurately forecasting bike demand can help bike-sharing operators make better operational decisions, such as anticipating periods of high demand and planning bike availability accordingly.
 
-Beyond predictive accuracy, this project demonstrates the importance of identifying data leakage, selecting validation methods appropriate for time-based data, comparing alternative models, and translating model outputs into interpretable insights.
+Beyond predictive accuracy, this project demonstrates the importance of identifying data leakage, selecting validation methods appropriate for time-based data, comparing alternative models, and translating model outputs into interpretable insights that can support business decisions.
 
 ## Tools & Technologies
 
