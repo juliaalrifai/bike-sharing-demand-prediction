@@ -76,6 +76,7 @@ The Random Forest substantially outperformed the Linear Regression baseline, red
 The final Random Forest achieved a **test RMSE of 94.44**, which was close to its **mean time-series cross-validation RMSE of 93.22**, suggesting that the validation process provided a reasonable estimate of performance on unseen data.
 
 ## Key Insights
+![Top Drivers of Bike-Sharing Demand](bike_sharing_feature_importance.png)
 
 Feature importance analysis showed that several of the strongest predictors of bike demand were:
 
